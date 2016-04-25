@@ -1,0 +1,53 @@
+<div class="aw-mod aw-text-align-justify">
+	<div class="mod-head">
+		<a href="people/" class="pull-right"><?php _e('更多'); ?> &gt;</a>
+		<h3><?php _e('热门用户'); ?></h3>
+	</div>
+	<div class="mod-body">
+		<?php if (is_array($this->sidebar_hot_users)) { ?>
+		<?php foreach($this->sidebar_hot_users AS $key => $val) {?>	
+		<dl>
+			<dt class="pull-left aw-border-radius-5">
+				<a href="people/<?php echo $val['url_token']; ?>"><img alt="" src="<?php echo get_avatar_url($val['uid'], 'mid'); ?>" /></a>
+			</dt>
+			<dd class="pull-left">
+				<a href="people/<?php echo $val['url_token']; ?>" data-id="<?php echo $val['uid']; ?>" class="aw-user-name"><?php echo $val['user_name']; ?><?php if ($val['verified']) { ?><i class="icon-v<?php if ($val['verified'] == 'enterprise') { ?> i-ve<?php } ?>" title="<?php if ($val['verified'] == 'enterprise') { ?>企业认证<?php } else { ?>个人认证<?php } ?>"></i><?php } ?>
+						<?php echo $val['signature']; ?></a>
+				<p class="signature"><?php echo $val['signature']; ?></p>
+				<p><?php _e('%s 个问题', '<b>' . $val['answer_count'] . '</b>'); ?>, <?php _e('%s 次赞同', '<b>' . $val['agree_count'] . '</b>'); ?></p>
+			</dd>
+		</dl>
+		<?php } ?>
+		<?php } ?>
+	</div>
+</div>
+<?php 
+$url = $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];
+if ($url === '50vip.com/index.php?') {
+?>
+<div class="aw-mod aw-text-align-justify">
+	<div class="mod-head">
+		<h3><?php _e('友情链接'); ?></h3>
+	</div>
+	<div class="mod-body">
+		<dl><dd class="pull-left"><a href="http://www.kaedeen.com/" target="_blank">Kaedeen</a></dd></dl>
+		<dl><dd class="pull-left"><a href="http://www.clanfei.com" target="_blank">蓝飞技术</a></dd></dl>
+		<dl><dd class="pull-left"><a href="http://www.wenhq.com" target="_blank">亲亲宝宝</a></dd></dl>
+		<dl><dd class="pull-left"><a href="http://dou.lu/" target="_blank">逗妇鲁</a></dd></dl>
+		<dl><dd class="pull-left"><a href="http://imrui.cn/" target="_blank">王瑞刚博客</a></dd></dl>
+		<dl><dd class="pull-left"><a href="http://www.tedlife.com/" target="_blank">TEDLife</a></dd></dl>
+		<dl><dd class="pull-left"><a href="http://java-er.com" target="_blank">月小升</a></dd></dl>
+		<dl><dd class="pull-left"><a href="http://witmax.cn/" target="_blank">枫芸志</a></dd></dl>
+		<dl><dd class="pull-left"><a href="http://www.tanglangxia.com" target="_blank">螳螂虾</a></dd></dl>
+		<dl><dd class="pull-left"><a href="http://www.weisay.com/blog/" target="_blank">威言威语</a></dd></dl>
+		<dl><dd class="pull-left"><a href="http://catinmay.com/" target="_blank">小猫咪</a></dd></dl>
+		<dl><dd class="pull-left"><a href="http://www.lvtao.net/" target="_blank">吕滔博客</a></dd></dl>
+		<dl><dd class="pull-left"><a href="http://www.songlin51.com" target="_blank">松林's blog</a></dd></dl>
+		<dl><dd class="pull-left"><a href="http://www.97world.com/" target="_blank">折腾的世界</a></dd></dl>
+		<dl><dd class="pull-left"><a href="http://www.mmtx.net" target="_blank">麦麦同学</a></dd></dl>
+		<dl><dd class="pull-left"><a href="http://www.aini365.cn/" target="_blank">WenRou</a></dd></dl>
+	</div>
+</div>
+<?php
+}
+?>

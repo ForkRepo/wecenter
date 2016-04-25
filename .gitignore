@@ -1,0 +1,5 @@
+install
+cache
+uploads
+tmp
+system/config/database.php
